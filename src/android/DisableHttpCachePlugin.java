@@ -16,8 +16,6 @@ public class DisableHttpCachePlugin extends CordovaPlugin {
     Log.i(TAG, "initialize");
     super.initialize(cordova, webView);
     WebView wv = (WebView) webView.getView();
-    WebSettings ws = wv.getSettings();
-    ws.setAppCacheEnabled(false);
-    ws.setCacheMode(WebSettings.LOAD_NO_CACHE);
+    webView.getSettings().setCacheMode(WebSettings.LOAD_NO_CACHE);
   }
 }
